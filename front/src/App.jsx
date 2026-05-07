@@ -3,7 +3,7 @@ import TodoInput from './components/TodoInput';
 import TodoList from './components/TodoList';
 import './App.css';
 
-const API_URL = 'http://localhost:4000/todos';
+const API_URL = 'https://testing-back-9scf.onrender.com/api';
 
 function App() {
   const [todos, setTodos] = useState([]);
