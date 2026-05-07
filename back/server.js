@@ -1,0 +1,18 @@
+const express = require('express');
+const cors = require('cors');
+const todoRoutes = require('./todoRoutes');
+
+const app = express();
+const PORT = process.env.PORT || 4000;
+
+app.use(cors());
+app.use(express.json());
+app.use('/todos', todoRoutes);
+
+app.use((req, res) => {
+  res.status(404).json({ message: 'API endpoint not found' });
+});
+
+app.listen(PORT, () => {
+  console.log(`Todo backend running on http://localhost:${PORT}`);
+});
